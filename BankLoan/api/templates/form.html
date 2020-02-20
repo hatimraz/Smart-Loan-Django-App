@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Loan Application Form</title>
+    {% load static %}
+    <!-- Icons font CSS-->
+    <link href= "{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href= "{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    {% load crispy_forms_tags %}
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Loan Application Form</h2>
+                </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div id="message" class="container">
+                            <div class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">
+                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                                <strong>
+                                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                    Error: 
+                                {% else %}
+                                    {{ message.tags|title }}
+                                {% endif %}
+                                </strong>
+                                {{ message }}
+                            </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-row m-b-55">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-5">
+                                        <div class="input-group-desc">
+                                            {{ form.firstname|as_crispy_field }}
+                                            <label class="label--desc">Firstname</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="input-group-desc">
+                                            {{ form.lastname|as_crispy_field }}
+                                            <label class="label--desc">Lastname</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Dependents</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    {{ form.Dependents|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Applicant income</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    {{ form.ApplicantIncome|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Co-Applicant income</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    {{ form.CoapplicantIncome|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Loan amount</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    {{ form.LoanAmount|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Loan amount term</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    {{ form.Loan_Amount_Term|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Credit History</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    {{ form.Credit_History|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Gender</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.Gender|as_crispy_field }}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Married</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.Married|as_crispy_field }}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Education</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.Education|as_crispy_field }}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Self employed</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.Self_Employed|as_crispy_field }}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Property area</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.Property_Area|as_crispy_field }}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
+    <!-- Main JS-->
+     <script src="{% static 'js/global.js' %}"></script>
+
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
