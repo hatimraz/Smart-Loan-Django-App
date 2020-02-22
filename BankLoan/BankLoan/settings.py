@@ -25,7 +25,7 @@ SECRET_KEY = 'i)1zklpbn2d*f09*n^$=exqv@ijdt85z74cd1kmda3p7p^40b='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://smart-loan-application-razani.herokuapp.com/', '*']
+ALLOWED_HOSTS = ['https://smart-loan-application-razani.herokuapp.com/', '.herokuapp.com']
 
 
 # Application definition
