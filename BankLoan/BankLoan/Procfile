@@ -1,1 +1,1 @@
-web: gunicorn BankLoan.wsgi:application --log-file -
+web: gunicorn BankLoan.wsgi.application:application --log-file -
