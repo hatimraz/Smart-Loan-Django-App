@@ -48,7 +48,7 @@ def approvereject(unit):
 	except ValueError as e:
 		return (e.args[0])
 
-def load_app(request):
+def load_app(request): 
 	if request.method=='POST':
 		form=ApprovalForm(request.POST)
 		if form.is_valid():
