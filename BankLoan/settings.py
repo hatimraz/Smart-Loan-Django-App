@@ -27,7 +27,7 @@ SECRET_KEY = 'i)1zklpbn2d*f09*n^$=exqv@ijdt85z74cd1kmda3p7p^40b='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://smart-loan-application-razani.herokuapp.com/', '.herokuapp.com', '*']
+ALLOWED_HOSTS = ['https://smart-loan-application-razani.herokuapp.com/', '.herokuapp.com',]
 
 
 # Application definition
@@ -134,7 +134,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '../static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
