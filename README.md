@@ -1,3 +1,3 @@
-# Smast-Loand-Django-App
+# Smart-Loan-Django-App
 
 App Link : https://smart-loan-application-razani.herokuapp.com/
